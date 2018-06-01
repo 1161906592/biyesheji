@@ -1,7 +1,10 @@
 <template>
   <div class="list">
-    <div v-for="(item, index) in data" :key="index" class="item">
-      <img class="img" src="http://119.23.59.102/images/默认头像.jpg"/>
+    <div v-for="(item, index) in data" :key="index" class="item" @click="toDetail(item)">
+      <div class="img">
+        <img :src="item.imgPath"/>
+        <div>{{item.department}}</div>
+      </div>
       <div class="info">
         <div class="title">
           <div class="name">{{item.name}}</div>
@@ -27,6 +30,16 @@ export default {
       data: null
     }
   },
+  methods: {
+    toDetail (item) {
+      this.$router.push({
+        name: 'detail',
+        query: {
+          id: item.id
+        }
+      })
+    }
+  },
   created () {
     axios
       .get('/api/bysj/data')
@@ -40,7 +53,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
   @import "../assets/px2rem";
   .list{
     background: #efefef;
@@ -53,9 +66,24 @@ export default {
       margin-top: 0;
     }
     .img{
+      position: relative;
       flex: none;
       width: px2rem(230);
       height: px2rem(230);
+      img{
+        width: px2rem(230);
+        height: px2rem(230);
+      }
+      div{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        line-height: px2rem(48);
+        background: rgba(blue, 0.3);
+        color: #fff;
+        font-size: px2rem(28);
+        text-indent: px2rem(20);
+      }
     }
     .info{
       height: px2rem(230);

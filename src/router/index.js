@@ -12,7 +12,8 @@ export default new Router({
     },
     {
       path: '/detail',
-      name: 'detail'
+      name: 'detail',
+      component: () => import('../views/detail')
     }
   ]
 })
