@@ -44,7 +44,7 @@ export default {
   },
   created () {
     axios
-      .get('/api/bysj/detail', {
+      .get('/bysj/detail', {
         params: {
           id: this.$route.query.id
         }

@@ -42,7 +42,7 @@ export default {
   },
   created () {
     axios
-      .get('/api/bysj/data')
+      .get('/bysj/data')
       .then(res => {
         console.log(res)
         this.data = res.data.data
