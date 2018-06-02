@@ -4,8 +4,6 @@ import Vue from 'vue'
 import router from './router'
 const App = () => import(/* webpackChunkName: 'App' */ './App')
 
-console.log(App)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
