@@ -15,7 +15,7 @@
           {{item.introduction}}
         </div>
         <div class="item-nav">详细介绍</div>
-        <div class="item-nav">预约挂号</div>
+        <div class="item-nav" @click.stop="toForm">预约挂号</div>
       </div>
     </div>
   </div>
@@ -37,6 +37,11 @@ export default {
         query: {
           id: item.id
         }
+      })
+    },
+    toForm () {
+      this.$router.push({
+        name: 'form'
       })
     }
   },

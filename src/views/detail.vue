@@ -6,7 +6,7 @@
         <div class="name">{{data.name}}</div>
         <div class="about">{{data.post}}&nbsp;&nbsp;&nbsp;{{data.professional}}</div>
         <div class="department">所属科室：{{data.department}}</div>
-        <a href="tel:023-123456"><div class="call">预约咨询</div></a>
+        <div class="call" @click="toForm">预约咨询</div>
       </div>
     </div>
     <div class="section">
@@ -40,6 +40,13 @@ export default {
         department: '',
         imgPath: ''
       }
+    }
+  },
+  methods: {
+    toForm () {
+      this.$router.push({
+        name: 'form'
+      })
     }
   },
   created () {

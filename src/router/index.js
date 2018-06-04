@@ -1,5 +1,4 @@
 import Router from 'vue-router'
-
 export default new Router({
   routes: [
     {
@@ -11,6 +10,11 @@ export default new Router({
       path: '/detail',
       name: 'detail',
       component: () => import('../views/detail')
+    },
+    {
+      path: '/form',
+      name: 'form',
+      component: () => import('../views/form')
     }
   ]
 })
